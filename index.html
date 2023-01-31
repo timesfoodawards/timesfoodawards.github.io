@@ -19,22 +19,28 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
 
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+
         <link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet">
 
         <script type="text/javascript">
         $( document ).ready(function() {
             const urlParams = new URLSearchParams(window.location.search);
             const submitted = urlParams.get('submitted');
-            alert(document.forms.contactForm.action);
+            debugger;
             if (document.URL.search("127.0.0.1") > 0){
                 document.forms.contactForm.action="http://localhost:3000/tfna_emails/send_tfna_website_query";
-            } else if (document.URL.search("timesfoodawards.com") {
+            } else if (document.URL.search("timesfoodawards.com")) {
                 document.forms.contactForm.action="https://sales.timescity.com/tfna_emails/send_tfna_website_query";
 
             }
-            if (submitted != null) {
+            $("#contactForm").validate(
+
+            );
+           if (submitted != null) {
                 elem = new jBox('Notice', {
                   title: 'Quqry Submitted',
                   content: 'Your query has been submitted, we would get back to you shortly.',
@@ -396,29 +402,29 @@ food and lifestyle influencers vote for their favorites</p>
                         <form id="contactForm" name="contactForm" action="" method="post">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" name="name" type="text" placeholder="Enter your name..." />
+                                <input class="form-control" name="name" minlength="2" type="text" placeholder="Enter your name..." required  data-msg="Name is required"/>
                                 <label for="name">Full name</label>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" name="email" type="email" placeholder="name@example.com"/>
+                                <input class="form-control" name="email" type="email" placeholder="name@example.com" required/>
                                 <label for="email">Email address</label>
                             </div>
 
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" name="address" type="text" placeholder="Gurugrum, Haryana"/>
+                                <input class="form-control" name="address" type="text" placeholder="Gurugrum, Haryana" required />
                                 <label for="email">City / State</label>
                             </div>
 
                             <!-- Phone number input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" name="phone" type="tel" placeholder="(123) 456-7890" />
+                                <input class="form-control" name="phone" type="number" minlength=10 maxlength="10" requied placeholder="9814567890" />
                                 <label for="phone">Phone number</label>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem"></textarea>
+                                <textarea class="form-control" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" requied></textarea>
                                 <label for="message">Message</label>
                             </div>
                             <!-- Submit error message-->
