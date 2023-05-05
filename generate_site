@@ -1,0 +1,6 @@
+rm index.html
+rm -rf times_food_nightlife_awards
+mkdir times_food_nightlife_awards
+mkdir times_food_nightlife_awards/2023
+ruby generate_award_htmls.rb
+ruby generate_index.rb
