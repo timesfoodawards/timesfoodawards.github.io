@@ -1,6 +1,6 @@
     <nav class="navbar navbar-expand-lg navbar-light ms-auto fixed-top py-3"  id="mainNav">
   <div class="container">
-    <a class="navbar-brand" href="#page-top">Times Food & Nightlife Awards</a>
+    <a class="navbar-brand" href="/#page-top">Times Food & Nightlife Awards</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,18 +17,17 @@
             <li><a class="dropdown-item" href="/#model"> Awards Model </a></li>
             <li><a class="dropdown-item" href="#"> Awards 2023 &raquo; </a>
               <ul class="submenu dropdown-menu">
-                <ul class="submenu dropdown-menu">
-                  <% @cities.each do |city| %>
-                    <%= "<li><a class='dropdown-item' href=\"/times_food_nightlife_awards/2023/#{city}.html\">#{city}</a></li>" %>
-                  <% end %>
-                </ul>
+                <% @cities.each do |city| %>
+                  <%= "<li><a class='dropdown-item' href=\"/times_food_nightlife_awards/2023/#{city}_winners.html\">#{city}</a></li>" %>
+                <% end %>
               </ul>
-            </li>
+            </ul>
           </li>
-        </ul>
-      </div>
-      <!-- navbar-collapse.// -->
+        </li>
+      </ul>
     </div>
+    <!-- navbar-collapse.// -->
   </div>
-  <!-- container-fluid.// -->
+</div>
+<!-- container-fluid.// -->
 </nav>

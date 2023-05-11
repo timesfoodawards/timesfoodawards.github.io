@@ -19,6 +19,7 @@ doc.sheets.each do |sheet|
   # loop through the rows
   scope = Object.new
   scope.instance_variable_set :@cities, cities
+  scope.instance_variable_set :@city, sheet.name
   scope.instance_variable_set :@sheet_data, sheet_data
   output = template.render(scope)
   filename = "./times_food_nightlife_awards/2023/#{sheet.name}_winners.html"

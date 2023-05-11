@@ -2,7 +2,7 @@
 <!-- SimpleLightbox plugin JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 <!-- Core theme JS-->
-<script src="js/scripts.js"></script>
+<script src="/js/scripts.js"></script>
 </body>
 <script type="text/javascript">
   //	window.addEventListener("resize", function() {
@@ -58,4 +58,22 @@
   
       });
       // DOMContentLoaded  end
+  
+    function showWinner(title, winner, cityname) {
+        content = '<figure class="text-center"> \
+  <blockquote class="blockquote"> \
+    <p>' + winner + '<br/><br/></p> \
+  </blockquote> \
+  <figcaption class="blockquote-footer"> \
+    Times Food & Nightlife 2023 Winner in <cite title="' + cityname + '">' + cityname + '</cite> \
+  </figcaption> \
+  </figure>';
+      var winnerModal = new jBox('Modal', {
+        title: title,
+        content: content,
+        closeButton: 'true',
+        animation: 'slide'
+        });
+        winnerModal.open();
+    }
 </script>
